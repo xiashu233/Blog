@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/semantic.css" />
+    <link rel="stylesheet" type="text/css" href="/css/me.css" />
+    <link rel="stylesheet" type="text/css" href="/css/typo.css" />
+    <link rel="stylesheet" type="text/css" href="/css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/prism/prism.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/tocbot/tocbot.css" />
+    <title th:text="${title}">博客</title>
+</head>
+<body>
+
+<!-- 导航 -->
+<nav th:fragment="menu(n)"  class="ui inverted attached segment me-padded-tb-mini m-shadow-small">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">管理后台</h2>
+            <a href="#" th:href="@{/admin/blogs}" class="m-item item m-moblie-hide" th:classappend="${n==1} ? 'active'"><i class="home icon"></i>博客</a>
+            <a href="#" th:href="@{/admin/types}" class="m-item item m-moblie-hide" th:classappend="${n==2} ? 'active'"><i class="idea icon"></i>分类</a>
+            <a href="#" th:href="@{/admin/tags}" class="m-item item m-moblie-hide" th:classappend="${n==3} ? 'active'"><i class="tags icon "></i>标签</a>
+            <div class="right menu ">
+                <div class="ui dropdown item m-item m-moblie-hide">
+                    <div class="text">
+                        <img class="ui avatar image" src="https://picsum.photos/id/1045/100/100" >
+                        李治强
+                    </div>
+                    <i class="icon dropdown"></i>
+                    <div class="menu">
+                        <a href="/admin/logout" class="item">注销</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui black toogle icon button m-right-top m-moblie-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+<footer th:fragment="footer" class="ui inverted vertical segment me-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted stackable divided grid">
+            <div class="three wide column">
+                <img src="/images/gongzhonghao.jpg" class="ui rounded image centered" style="width: 120px;">
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">用户故事（User Story）</a>
+                    <a href="#" class="item">自述</a>
+                    <a href="#" class="item">用户故事</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">联系我</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">Emall:2453893123@QQ.com</a>
+                    <a href="#" class="item">QQ:2453893123</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header">XiaShu</h4>
+                <p class="m-text-thin m-text-space m-opacity-mini">
+                    这是我的个人博客，主要用来记录日常学习以及所想所得。任何我觉得可以分享的东西我都可以发布在这里。
+                </p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-text-space m-opacity-mini" style="cursor: pointer;">Hello World!</p>
+    </div>
+</footer>
+
+</body>
+</html>

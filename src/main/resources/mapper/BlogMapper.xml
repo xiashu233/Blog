@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiashu.spblog.mapper.BlogMapper">
+
+    <select id="SearchListBlog" resultType="com.xiashu.spblog.bean.Blog">
+            SELECT
+                *
+            FROM
+                `blog`
+            WHERE
+                title LIKE '%${param1}%'
+                AND type_id = ${param2}
+                AND recommend = ${param3}
+    </select>
+
+    <insert id="InsertBlog" parameterType="com.xiashu.spblog.bean.Blog">
+        INSERT INTO `blog`.`blog` ( `appreciation`, `commentabled`, `content`, `create_time`, `first_picture`, `flag`,`published` ,`recommend`,`title`, `update_time`, `views`, `type_id`, `user_id` )
+        VALUES
+	    ( (${appreciation}), (${commentabled}), '${content}', '${createTime}', '${firstPicture}', '${flag}',(${published}),(${recommend}), '${title}', '${updateTime}', ${views}, ${typeId}, 1 )
+    </insert>
+
+    <select id="selectBlogById" parameterType="long" resultType="com.xiashu.spblog.bean.Blog">
+        select * from blog where id = ${_parameter}
+    </select>
+
+    <select id="selectAllBlog" resultType="com.xiashu.spblog.bean.Blog">
+        select * from  blog
+    </select>
+
+
+    <select id="selectBlogAndYear" resultType="com.xiashu.spblog.bean.Blog">
+        SELECT
+            id,
+            title,
+            create_time,
+            YEAR ( create_time ) AS 'year'
+        FROM
+            blog
+    </select>
+
+
+</mapper>

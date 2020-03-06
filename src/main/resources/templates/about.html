@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" >
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/semantic.css" />
+		<link rel="stylesheet" type="text/css" href="/css/me.css" />
+		<link rel="stylesheet" type="text/css" href="/css/typo.css" />
+		<link rel="stylesheet" type="text/css" href="/css/animate.css" />
+		<link rel="stylesheet" type="text/css" href="/lib/prism/prism.css" />
+		<link rel="stylesheet" type="text/css" href="/lib/tocbot/tocbot.css" />
+		
+		<title>关于我</title>
+	</head>
+	<body>
+		<!-- 导航 -->
+		<nav th:replace="_fragments :: menu(5)" class="ui inverted attached segment me-padded-tb-mini m-shadow-small">
+
+		</nav>
+		<!-- 中间内容 -->
+		<div class=" me-padded-tb-large">
+			<div class="ui container">
+				<div class="ui stackable grid">
+					<div class="eleven wide column">
+						<img src="https://picsum.photos/id/10/800/600"  class="ui rounded image">
+					</div>	
+					<div class="five wide column">
+						<div class="ui top attached segment ">
+							<div class="ui header">
+								关于我
+							</div>
+						</div>
+						<div class="ui attached segment ">
+							<p class="m-text">李治强，目前在学习编程。主方向是Java后端，平时也会学习一些其他的。对于计算机感兴趣。</p>
+							<p class="m-text">喜欢编程，喜欢折腾。</p>
+						</div>
+						<div class="ui attached segment ">
+							<div class="ui orange basic label">
+								编程
+							</div>
+							<div class="ui orange basic label">
+								写作
+							</div>
+							<div class="ui orange basic label">
+								算法
+							</div>
+							<div class="ui orange basic label">
+								游戏
+							</div>
+							
+						</div>
+						<div class="ui attached segment ">
+							<div class="ui teal basic label me-margin-tb-tiny">
+								Java
+							</div>
+							<div class="ui teal basic label me-margin-tb-tiny">
+								MySQL
+							</div>
+							<div class="ui teal basic label me-margin-tb-tiny">
+								JavaWeb
+							</div>
+							<div class="ui teal basic label me-margin-tb-tiny">
+								Dubbo
+							</div>
+							<div class="ui teal basic label me-margin-tb-tiny">
+								HTML
+							</div>
+							<div class="ui teal basic label me-margin-tb-tiny">
+								CSS
+							</div>
+							<div class="ui teal basic label me-margin-tb-tiny">
+								JavaScript
+							</div>
+							<div class="ui teal basic label me-margin-tb-tiny">
+								semantic-ui
+							</div>
+							
+						</div>
+						<div class="ui bottom attached segment ">
+							<a href="https://github.com/xiashu233" class="ui circular icon button"><i class="icon github"></i></a>
+							<a href="http://wpa.qq.com/msgrd?v=3&uin=2453893123&site=qq&menu=yes" class="ui circular icon button"><i class="icon qq"></i></a>
+						</div>
+					</div>
+				</div>
+					
+			</div>
+			
+		</div>
+		
+		<!-- 底部 -->
+			<footer th:replace="_fragments :: footer" class="ui inverted vertical segment me-padded-tb-massive">
+
+		</footer>
+
+		<script src="/js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/semantic.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+	</body>
+	
+	<script>
+		$(".toogle").click(function(){
+			$(".m-item").toggleClass('m-moblie-hide')
+		});
+		
+		
+	</script>
+</html>
