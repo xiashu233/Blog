@@ -28,4 +28,6 @@ public interface BlogService {
     Map<String, List<Blog>> geArchives();
 
     List<Blog> listBlogByTypeId(Long typeId);
+
+    List<Blog> listBlogByTagsId(Long tagsId);
 }

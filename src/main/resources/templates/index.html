@@ -71,7 +71,7 @@
                                         </div>
                                     </div>
                                     <div class="right aligned five wide column">
-                                        <a th:each="tag:${blog.tags}" href="#" target="_blank" class="ui teal basic label m-padded-tiny" th:text="${tag.name}">标签</a>
+                                        <a th:each="tag:${blog.tags}" th:href="@{/tags/}+${tag.id}" target="_blank" class="ui teal basic label m-padded-tiny" th:text="${tag.name}">标签</a>
                                     </div>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@
 
                     <div class="ui teal segment">
                         <div class="ui fluid vertical menu">
-                            <a th:each="type:${typeList}" href="" class="item" >
+                            <a th:each="type:${typeList}" th:href="@{/types/}+${type.id}" class="item" >
                                 <span th:text="${type.name}">学习日志</span>
                                 <div class="ui teal basic label" th:text="${type.blogsCount}">13</div>
                             </a>
@@ -144,7 +144,7 @@
                         </div>
                     </div>
                     <div class="ui teal segment">
-                        <a href="#" th:each="tag:${tagList}" target="_blank" class="ui teal basic label me-margin-tb-tiny">
+                        <a th:href="@{/tags/}+${tag.id}" th:each="tag:${tagList}" target="_blank" class="ui teal basic label me-margin-tb-tiny">
                              <span th:text="${tag.name}">闲谈</span>
                             <div class="detail" th:text="${tag.blogsCount}">2</div>
                         </a>

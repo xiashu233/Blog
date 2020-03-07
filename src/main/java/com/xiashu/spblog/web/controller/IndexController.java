@@ -50,10 +50,13 @@ public class IndexController {
         return "blog";
     }
 
-    @GetMapping("/tags")
-    public String tags(ModelMap modelMap){
+    @GetMapping("/tags/{tagsId}")
+    public String tags(@PathVariable("tagsId")Long tagsId,ModelMap modelMap){
         List<Tag> tagList = tagsService.listTagAndCount();
         modelMap.put("tagList",tagList);
+
+        List<Blog> blogList = blogService.listBlogByTagsId(tagsId);
+        modelMap.put("blogList",blogList);
         return "tags";
     }
 

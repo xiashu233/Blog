@@ -41,7 +41,7 @@ public class BlogController {
         model.addAttribute("types",types);
         PageInfo<Blog> blogPageInfo = blogService.listBlog(5);
         model.addAttribute("page",blogPageInfo);
-        return LIST;
+        return "admin/blogs";
     }
 
     @GetMapping("blogs/input")
@@ -107,7 +107,7 @@ public class BlogController {
         PageInfo<Blog> blogPageInfo = blogService.listBlog(5);
         model.addAttribute("page",blogPageInfo);
 
-        return "/admin/blogs";
+        return "redirect:http://localhost:8081/admin/blogs";
     }
 
     @PostMapping("/blogs/search")

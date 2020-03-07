@@ -33,10 +33,10 @@ public class Blog {
 
     private String description;
 
+    @Transient
     private Type type;
     @Transient
     private String tagIds;
-
     @Transient
     private String contentDes;
     @Transient

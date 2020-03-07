@@ -160,6 +160,23 @@ public class BlogServiceImpl implements BlogService {
         return blogList;
     }
 
+    @Override
+    public List<Blog> listBlogByTagsId(Long tagsId) {
+        List<Blog> blogList = new ArrayList<>();
+        BlogTags blogTags = new BlogTags();
+        blogTags.setTagsId(tagsId);
+        List<BlogTags> blogTagsList = blogTagsMapper.select(blogTags);
+        for (BlogTags tags : blogTagsList) {
+            Long blogsId = tags.getBlogsId();
+            Blog blog = blogMapper.selectByPrimaryKey(blogsId);
+            Type type = typeMapper.selectByPrimaryKey(blog.getTypeId());
+            blog.setType(type);
+            blogList.add(blog);
+        }
+
+        return blogList;
+    }
+
     private List<Blog> initType(List<Blog> list){
 
         Type sqlType = new Type();
