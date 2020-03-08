@@ -89,8 +89,11 @@ public class IndexController {
 
     @GetMapping("/about")
     public String about(){
-
-
         return "about";
+    }
+
+    @GetMapping("/")
+    public String toIndex(ModelMap modelMap){
+        return index(1,modelMap);
     }
 }
