@@ -109,17 +109,12 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public List<Blog> listRecommendBlogs() {
-        Blog blog = new Blog();
-        blog.setRecommend("1");
-        blog.setPublished("1");
-        List<Blog> blogList = blogMapper.select(blog);
+//        Blog blog = new Blog();
+//        blog.setRecommend("1");
+//        blog.setPublished("1");
+//        List<Blog> blogList = blogMapper.select(blog);
+        List<Blog> blogList = blogMapper.selectAll();
         for (Blog blogItem : blogList) {
-            if (blogItem.getContent().length() > 40){
-                blogItem.setContentDes(blogItem.getContent().substring(0,40));
-            }else{
-                blogItem.setContentDes(blogItem.getContent());
-            }
-
             BlogTags blogTags = new BlogTags();
             blogTags.setBlogsId(blogItem.getId());
             List<BlogTags> blogTagsList = blogTagsMapper.select(blogTags);
@@ -133,6 +128,7 @@ public class BlogServiceImpl implements BlogService {
         }
         return blogList;
     }
+
 
     @Override
     public Map<String, List<Blog>> geArchives() {
@@ -175,6 +171,12 @@ public class BlogServiceImpl implements BlogService {
         }
 
         return blogList;
+    }
+
+    @Override
+    public int getTotalBlog() {
+        Blog blog = new Blog();
+        return blogMapper.selectCount(blog);
     }
 
     private List<Blog> initType(List<Blog> list){

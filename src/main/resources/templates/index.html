@@ -35,7 +35,7 @@
                             </h3>
                         </div>
                         <div class="column right aligned">
-                            共 <h3 class="ui orange header m-inline-block">14</h3> 篇
+                            共 <h3 class="ui orange header m-inline-block" th:text="${totalNum}">14</h3> 篇
                         </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                 <!-- content -->
                 <div class="ui attached  segment">
 
-                    <div th:each="blog:${blogList}" class="ui padded vertical segment me-padded-tb-large">
+                    <div th:each="blog:${blogList.list}" class="ui padded vertical segment me-padded-tb-large">
                         <div class="ui mobile reversed stackable grid">
                             <div class="eleven wide column">
                                 <h3 class="ui header" th:text="${blog.title}">Hello SpringBoot</h3>
@@ -92,11 +92,11 @@
                 <!-- bottom -->
                 <div class="ui attached bottom segment me-padded-tb-large">
                     <div class="ui middle aligned two column grid">
-                        <div class="column">
-                            <a href="" class="ui teal basic mini button">上一页</a>
+                        <div class="column" >
+                            <a th:href="@{/index/}+${blogList.prePage}" id="prefNum" class="ui teal basic mini button" th:if="${!blogList.isFirstPage}">上一页</a>
                         </div>
-                        <div class="column right aligned">
-                            <a href="" class="ui teal basic mini button">下一页</a>
+                        <div class="column right aligned" >
+                            <a th:href="@{/index/}+${blogList.nextPage}" id="nextNum" class="ui teal basic mini button" th:if="${!blogList.isLastPage}">下一页</a>
                         </div>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
                     <div class="ui secondary segment">
                         <i class="bookmark icon"></i>最新推荐
                     </div>
-                    <div th:each="blog:${blogList}" class="ui segment">
+                    <div th:each="blog:${blogList.list}" class="ui segment">
                         <a  th:href="@{/blog/}+${blog.id}" target="_blank" class="m-black" th:text="${blog.title}">用户故事（User Story）</a>
                     </div>
 
@@ -180,20 +180,7 @@
 </footer>
 </body>
 
-<script type="text/javascript" charset="utf-8"  src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.0.min.js"></script>
-<script type="text/javascript" charset="utf-8"  src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.min.js"></script>
-
 <script>
-    L2Dwidget.init({
-        "display": {
-            "superSample": 2,
-            "width": 200,
-            "height": 400,
-            "position": "right",
-            "hOffset": 0,
-            "vOffset": 0
-        }
-    });
 
     $(".toogle").click(function(){
         $(".m-item").toggleClass('m-moblie-hide')

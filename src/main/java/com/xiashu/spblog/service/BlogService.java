@@ -30,4 +30,6 @@ public interface BlogService {
     List<Blog> listBlogByTypeId(Long typeId);
 
     List<Blog> listBlogByTagsId(Long tagsId);
+
+    int getTotalBlog();
 }

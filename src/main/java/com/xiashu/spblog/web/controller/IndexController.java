@@ -1,5 +1,7 @@
 package com.xiashu.spblog.web.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.xiashu.spblog.bean.Blog;
 import com.xiashu.spblog.bean.Tag;
 import com.xiashu.spblog.bean.Type;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -29,10 +32,17 @@ public class IndexController {
     @Autowired
     BlogTagsService blogTagsService;
 
-    @GetMapping("/index")
-    public String index(ModelMap modelMap){
+    @GetMapping("/index/{pageNum}")
+    public String index(@PathVariable("pageNum") int pageNum,ModelMap modelMap){
+        int totalPage = blogService.getTotalBlog();
+        modelMap.put("totalNum",totalPage);
+        int pageSize = totalPage - (pageNum - 1) * 5>5?5:totalPage - (pageNum-1) * 5;
+        PageHelper.startPage(pageNum,pageSize);
+
         List<Blog> blogList = blogService.listRecommendBlogs();
-        modelMap.put("blogList",blogList);
+        PageInfo pageInfo =new PageInfo<>(blogList);
+
+        modelMap.put("blogList",pageInfo);
 
         List<Type> typeList = typeService.listTypeAndCount();
         modelMap.put("typeList",typeList);
