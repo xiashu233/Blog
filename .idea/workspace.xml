@@ -8,12 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e8d10ce6-54bb-4920-afcd-ea3fb8e2bd21" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiashu/TestbdApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiashu/TestbdApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiashu/spblog/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiashu/spblog/service/BlogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiashu/spblog/service/impl/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiashu/spblog/service/impl/BlogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiashu/spblog/web/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiashu/spblog/web/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +169,7 @@
       <workItem from="1583632027295" duration="6218000" />
       <workItem from="1583638711257" duration="211000" />
       <workItem from="1583638935202" duration="147000" />
-      <workItem from="1583639534243" duration="717000" />
+      <workItem from="1583639534243" duration="862000" />
     </task>
     <task id="LOCAL-00001" summary="😝 主体功能基本完成，还有些Bug需要修复">
       <created>1583462898288</created>
@@ -218,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583588923914</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="✨ 修复部分Bug">
+      <created>1583640355002</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1583640355002</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,10 +246,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="378" width="441" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1583392758843" />
-    <state x="558" y="111" key="CommitChangelistDialog2" timestamp="1583588923114">
+    <state x="558" y="111" key="CommitChangelistDialog2" timestamp="1583640354012">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="558" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583588923114" />
+    <state x="558" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583640354012" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1583633160132">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -304,10 +306,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583394339036" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1583588930704">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1583640358436">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583588930704" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583640358436" />
     <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1583639534142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

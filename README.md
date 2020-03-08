@@ -5,3 +5,5 @@
 * 前端 Semantic UI,后端 SpringBoot+Mybatis+tk.mapper
 * 启动端口：localhost:8081
 * sql脚本：resource目录下的sql文件夹里 blog.sql
+
+#### 3/8修复部分bug
