@@ -179,6 +179,13 @@ public class BlogServiceImpl implements BlogService {
         return blogMapper.selectCount(blog);
     }
 
+    @Override
+    public void changeViewCount(Blog blogClone) {
+        Example example = new Example(Blog.class);
+        example.createCriteria().andEqualTo("id",blogClone.getId());
+        blogMapper.updateByExample(blogClone,example);
+    }
+
     private List<Blog> initType(List<Blog> list){
 
         Type sqlType = new Type();

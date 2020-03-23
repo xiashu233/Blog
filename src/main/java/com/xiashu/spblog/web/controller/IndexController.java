@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -53,8 +54,18 @@ public class IndexController {
     }
 
     @GetMapping("/blog/{blogId}")
-    public String blogs(@PathVariable("blogId") Long blogId,ModelMap modelMap){
+    public String blogs(@PathVariable("blogId") Long blogId, ModelMap modelMap){
         Blog blog = blogService.getBlogAndConvert(blogId);
+
+
+        Blog blogClone = null;
+        try {
+            blogClone = (Blog) blog.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        blogClone.setViewsCount((blogClone.getViewsCount()+1));
+        blogService.changeViewCount(blogClone);
         // 分页
         modelMap.put("blog",blog);
         return "blog";

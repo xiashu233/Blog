@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Blog {
+public class Blog implements Cloneable{
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -32,6 +32,8 @@ public class Blog {
     private Date updateTime;
 
     private String description;
+
+    private Long viewsCount;
 
     @Transient
     private Type type;
@@ -232,6 +234,14 @@ public class Blog {
         this.year = year;
     }
 
+    public Long getViewsCount() {
+        return viewsCount;
+    }
+
+    public void setViewsCount(Long viewsCount) {
+        this.viewsCount = viewsCount;
+    }
+
     @Override
     public String toString() {
         return "Blog{" +
@@ -250,5 +260,15 @@ public class Blog {
                 '}';
     }
 
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        Blog blog = new Blog();
 
+        try{
+            blog = (Blog) super.clone();   //浅复制
+        }catch(CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return blog;
+    }
 }

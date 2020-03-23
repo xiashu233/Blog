@@ -10,10 +10,10 @@ import java.util.Properties;
 
 @SpringBootApplication
 @MapperScan(basePackages = "com.xiashu.spblog.mapper")
-public class TestbdApplication {
+public class BlogApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TestbdApplication.class, args);
+        SpringApplication.run(BlogApplication.class, args);
     }
 
     @Bean

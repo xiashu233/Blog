@@ -13,7 +13,7 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TestbdApplicationTests {
+public class BlogApplicationTests {
 
     @Autowired
     BlogTagsMapper blogTagsMapper;

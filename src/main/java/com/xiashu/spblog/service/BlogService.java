@@ -32,4 +32,6 @@ public interface BlogService {
     List<Blog> listBlogByTagsId(Long tagsId);
 
     int getTotalBlog();
+
+    void changeViewCount(Blog blogClone);
 }
