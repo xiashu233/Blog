@@ -36,7 +36,7 @@
 				<h2 th:each="yearItem,yeatStat:${archivesDate}" class="ui center aligned header" th:text="${yeatStat.current.key}">2017</h2>
 
 				<div class="ui fluid vertical menu"  >
-					<a href="" class="item" target="_blank" th:each="blog:${archivesDate['2020']}">
+					<a th:href="@{/blog/}+${blog.id}" class="item" target="_blank" th:each="blog:${archivesDate['2020']}">
 						<span>
 							<i class="mini teal circle icon"></i>
 							&nbsp;<span th:text="${blog.title}">关于刻意练习的清单</span>
